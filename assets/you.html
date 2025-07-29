@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pra Você, Kléria 💍</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1, #f06292, #ec407a);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #2c003e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      transition: background 1s ease;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .screen {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    h1 {
+      font-size: 2.7rem;
+      color: #c9184a;
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin: 1.5rem 0;
+      line-height: 1.7;
+    }
+
+    button {
+      margin: 1rem;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      background: #ff8fab;
+      color: white;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #f675a8;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen active" id="screen1">
+    <h1>Pra mulher mais linda do mundo...</h1>
+    <p>Kléria, cada dia contigo é um presente que me faz sorrir por dentro.</p>
+    <button onclick="nextScreen()">Próximo</button>
+  </div>
+
+  <div class="screen" id="screen2">
+    <p>Você é o motivo da minha paz, da minha felicidade e do meu crescimento.</p>
+    <button onclick="nextScreen()">Próximo</button>
+  </div>
+
+  <div class="screen" id="screen3">
+    <p>Ao seu lado, descobri o verdadeiro significado de amar e ser amado.</p>
+    <button onclick="nextScreen()">Próximo</button>
+  </div>
+
+  <div class="screen" id="screen4">
+    <p>Você é minha parceira de vida, de sonhos, de tudo.</p>
+    <button onclick="nextScreen()">Próximo</button>
+  </div>
+
+  <div class="screen" id="screen5">
+    <p>Não quero mais imaginar um futuro sem você. Não quero mais acordar sem o teu cheiro por perto.</p>
+    <button onclick="nextScreen()">Próximo</button>
+  </div>
+
+  <div class="screen" id="screen6">
+    <p>Vamos marcar passos importantes juntos... e começar agora!</p>
+    <button onclick="nextScreen()">Próximo</button>
+  </div>
+
+  <div class="screen" id="screen7">
+    <h1>Kléria dos Santos...</h1>
+    <p>Quer casar comigo? 💍❤️</p>
+    <button onclick="responder()">Sim!</button>
+    <button onclick="responder()">Claro que sim!</button>
+  </div>
+
+  <div class="screen" id="finalScreen">
+    <h1>Você disse SIM! 💖</h1>
+    <p style="font-size: 1.8rem; font-style: italic; margin-top: 2rem;">
+      Te amo, com alma, porque a alma nunca morre.
+    </p>
+    <p style="margin-top: 1.5rem;">Com amor, Edgar 💕</p>
+  </div>
+
+  <script>
+    let currentScreen = 1;
+
+    function nextScreen() {
+      document.getElementById(`screen${currentScreen}`).classList.remove("active");
+      currentScreen++;
+      document.getElementById(`screen${currentScreen}`).classList.add("active");
+    }
+
+    function responder() {
+      document.getElementById("screen7").classList.remove("active");
+      document.getElementById("finalScreen").classList.add("active");
+    }
+  </script>
+</body>
+</html>
+
